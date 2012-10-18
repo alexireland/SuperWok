@@ -1,0 +1,31 @@
+
+@media print {
+
+    body *{
+        visibility:hidden;
+    }
+
+    #shopInformation *{
+        visibility: visible;
+    }
+    #receiptTopInformation *{
+        visibility: visible;
+    }
+    #counterReceiptTable *{
+
+      visibility: visible;
+        height: auto;
+    }
+
+    #orderFooterInfo *{
+        visibility: visible;
+    }
+
+
+    header, .hide { visibility: hidden }
+
+    #myFooter,#myHeader{
+        visibility: hidden;
+    }
+}
+
