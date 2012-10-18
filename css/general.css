@@ -1,7 +1,6 @@
 body{
     padding:2px;
     margin: 5px;
-    background: red;
 }
 #left{
     float: left;width: 500px;height: 700px;
