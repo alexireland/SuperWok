@@ -2981,6 +2981,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .btn-group > .btn {
+    width: 130px;
   position: relative;
   float: left;
   margin-left: -1px;
@@ -3571,7 +3572,7 @@ input[type="submit"].btn.btn-mini {
 .navbar {
   *position: relative;
   *z-index: 2;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
   overflow: visible;
 }
 

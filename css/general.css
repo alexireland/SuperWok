@@ -5,8 +5,9 @@ body{
 }
 #left{
     float: left;width: 500px;height: 700px;
-    float: left;width: 500px;height: 700px;
+}
 
+#buttonSections{
 
 }
 #right{
@@ -48,9 +49,10 @@ body{
 
 }
 .itemButton{
-    height: 100px;
+    height: 70px;
     width:180px;
     margin-bottom: 15px;
+    font-size: 18px;
 
 }
 
@@ -139,26 +141,49 @@ body{
     color:#ffffff;
     font-size: 1.2em;
 }
-#counterPrintingInformation tbody tr td{
 
+#counterPrintingInformation table tbody tr td{
+    background-color: red;
 
 }
-/*#counterReceiptTable table{*/
-    /*font-size: 30px;*/
-    /*height: 350px;*/
-    /*width: 497px;*/
-    /*background-color: red;*/
+.reportSummary label{
+    float: left;
+    width: 90px;
+    color: #000000;
+    float: left;
+    margin-left: 5px;
+    font-size: 10px;
+    height: 25px;
+    display: inline-block;
+}
+
+#superWokreportInnerTable tbody tr{
+    margin-left: 20px;
+    height: 25px;
+    margin: 10px;
+    font-size: 12px;
+}
+#superWokreportInnerTable tbody tr td{
+
+    margin-left: 20px;
+    height: 25px;
+    margin: 10px;
+    font-size: 14px;
+}
 
 
+/*table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {*/
+    /*font-size: 15px;*/
+    /*height: 20px;*/
+    /*line-height: 18px;*/
+    /*text-align: left;*/
 /*}*/
 
+/*#reportTable{*/
+    /*width: 600px;*/
 
+/*}*/
+/*#reportTable tbody{*/
 
-
-table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-    font-size: 20px;
-    height: 20px;
-    line-height: 18px;
-    text-align: left;
-}
-
+    /*height: 30px;*/
+/*}*/

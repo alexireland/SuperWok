@@ -10,12 +10,29 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-responsive.min.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="../css/mobiscroll-1.5.css"/>
+    <link rel="stylesheet" href="../foundation/stylesheets/foundation.css"/>
+
     <link rel="stylesheet" href="../css/general.css"/>
+    <link rel="stylesheet" href="../css/printReport.css" media="print"/>
     <!--<link rel="stylesheet" href="../foundation/stylesheets/foundation.css"/>-->
 
     <script type="text/javascript" src="../script/jquery.min.js"></script>
     <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="../DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+    <!--<script type="text/javascript" src="../DataTables-1.9.4/media/js/jquery.dataTables.js"></script>-->
+    <script type="text/javascript" src="../foundation/javascripts/foundation.min.js"></script>
+    <script type="text/javascript" src="../persistence/persistence.js"></script>
+    <script type="text/javascript" src="../persistence/persistence.store.sql.js"></script>
+    <script type="text/javascript" src="../persistence/persistence.store.websql.js"></script>
+    <script type="text/javascript" src="../persistence/persistence.store.memory.js"></script>
+    <script type="text/javascript" src="../database/databaseSchema.js"></script>
+    <script type="text/javascript" src="../database/superwokDatabase.js"></script>
+    <script type="text/javascript" src="../database/sampleData.js"></script>
+    <script type="text/javascript" src="../mobiScroll/mobiscroll-1.5.js"></script>
+    <script type="text/javascript" src="../script/timeDate.js"></script>
+    <script type="text/javascript" src="../script/util.js"></script>
+    <script type="text/javascript" src="../script/report.js"></script>
     <!--<script type="text/javascript"src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCn_PuoSwTAs5OF550f_wYZHgLPefjG4RM&sensor=true"></script>-->
     <!--<script type="text/javascript" src="../foundation/javascripts/foundation.min.js"></script>-->
     <!--<script type="text/javascript" src="../script/customerDetail.js"></script>-->
@@ -27,7 +44,7 @@
 <body>
 <div class="navbar">
     <div class="navbar-inner">
-        <a class="brand" href="#">Title</a>
+        <a class="brand" href="#">SuperWok</a>
         <ul class="nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="customerDetail.html">Customer Details</a></li>
@@ -35,53 +52,96 @@
 
         </ul>
     </div>
-</div>
-<button id="testModel">Test Model</button>
-<button id="print">Print</button>
-
-<!--<div id="mydiv">-->
-    <!--This will be printed. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a quam at nibh adipiscing interdum. Nulla vitae accumsan ante.-->
-<!--</div>-->
-
-<div id="section_to_print">
-    <h1>This Section Will Be Printed on Printer</h1>
+    <div id="fancyClock"></div>
 
 </div>
-
-<form class="form-inline" style="margin-left: 50px;">
-    <input type="text" class="input-large" placeholder="address">
-    <!--<button type="submit" class="btn">Go</button>-->
-    <!--<a href="#myModal" role="button" class="btn" data-toggle="modal">Find on Google Map</a>-->
-
-    <button id="goToGoogle" role="button" class="btn">Find On Google Map</button>
-</form>
-
-<!--<div id="myModals" class="reveal-modal [expand, xlarge, large, medium, small]">-->
-    <!--<h2>Awesome. I have it.</h2>-->
-    <!--<p class="lead">Your couch.  I it's mine.</p>-->
-    <!--<p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>-->
-    <!--<a class="close-reveal-modal">&#215;</a>-->
-<!--</div>-->
-
-<a href="#myModal" role="button" class="btn" data-toggle="modal" >Launch demo modal</a>
-
-
-<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Modal header</h3>
-    </div>
-    <div class="modal-body">
-        <p>One fine body…</p>
-
+<div style="width: 640px; height:500px;float: left">
+    <div id="getReportSection" style="height: 30px; margin-bottom: 20px;">
+        <label style="float: left; margin-left: 20px;">From</label>
+        <input id="dateFrom" type="text" style="float: left; width: 150px;margin-left: 20px;"/>
+        <label style="float: left; margin-left: 20px;">To</label>
+        <input id="dateTo" type="text" style="float: left; width: 150px; margin-left: 20px;"/>
+        <button id="getReportTop" class="span2 btn-small btn-success"style="width: 140px; height: 30px;">Get Report</button>
     </div>
 
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button class="btn btn-primary">Save changes</button>
+    <div style="clear: both;"></div>
+    <lable style="position: absolute;top: 120px;left: 30px;">Date</lable>
+    <lable style="position: absolute;top: 120px;left: 270px;">ID</lable>
+    <lable style="position: absolute;top: 120px;left: 330px;">Type</lable>
+    <lable style="position: absolute;top: 120px;left: 440px;">Cancel</lable>
+    <lable style="position: absolute;top: 120px;left: 490px;">Pay</lable>
+    <lable style="position: absolute;top: 120px;left: 530px;">Amount</lable>
+
+    <div style="clear: both;"></div>
+    <div id="reportTable" style="width: 680px; height: 450px; background-color: white; margin-right:20px;overflow: auto; margin-top: 50px;">
+
     </div>
+    <div id="reportBottomButtons" style="float: left; margin-top: 10px;">
+        <button id="payOrder" class="span2 btn-large btn-warning" style="width: 140px;">PayOrder</button>
+        <button id="printReport" class="span2 btn-large btn-success"style="width: 140px;">Print-Report</button>
+        <button id="openDraw" class="span2 btn-large btn-success"style="width: 140px;">OpenDraw</button>
+    </div>
+
 </div>
-<div id="map_canvas" style="width:900px; height:500px;"></div>
+
+
+
+<div style="width: 300px; height:450px; background-color:blue; margin-left:20px;float: left">
+    <div id="showTheOrderDetails" style="float:right;background-color: #cccccc; width: 300px; height: 550px;">
+        <div id="shopInformation" style="text-align: center; margin-bottom: 50px;">
+            <label style="text-align: center;">SuperWok TakeAway</label>
+            <label style="text-align: center">Report Summary</label>
+            <label id="reportPeriod" style="font-size:10px;"></label>
+        </div>
+        <!--<div style="clear: both;"></div>-->
+        <div id="reportDetails">
+        <div class="reportSummary" style="margin-bottom:20px; ">
+            <label>OrderType</label>
+            <label style="width:35px;">Qty</label>
+            <label>Amount</label>
+        </div>
+
+        <div class="reportSummary">
+            <label>TakeAway</label>
+            <label id="reportTakeAwayQty" style="width:35px;"></label>
+            <label id="reportTakeAwayTotalPrice"></label>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="reportSummary">
+            <label>Collection</label>
+            <label id="reportCollectionQty" style="width:35px;"></label>
+            <label id="reportCollectionTotalPrice"></label>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="reportSummary">
+            <label>Delivery</label>
+            <label id="reportDeliveryQty" style="width:35px;"></label>
+            <label id="reportDeliveryTotalPrice"></label>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="reportSummary">
+            <label>Cancelled</label>
+            <label id="reportCancelQty" style="width:35px;"></label>
+            <label id="reportCancelTotalPrice"></label>
+        </div>
+        <!--<div style="clear: both;"></div>-->
+
+        <div class="reportSummary">
+            <label>Total</label>
+            <label id="reportTotalTotalQty" style="width:35px;"></label>
+            <label id="reportTotalTotalPrice"></label>
+        </div>
+        <!--<div style="clear: both;"></div>-->
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
 </body>
 </html>
 

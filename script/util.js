@@ -28,7 +28,22 @@ Util.printDiv = function(options, callback) {
 	Util.loadResource(printWindow, "../bootstrap/css/bootstrap.css", "css");
 	Util.loadResource(printWindow, "../foundation/stylesheets/foundation.css", "css");
 	Util.loadResource(printWindow, "../css/print.css", "css");
+    Util.loadResource(printWindow, "../css/printReport.css", "css");
 	Util.loadResource(printWindow, "../css/general.css", "css");
 
 	callback(printWindow, "printDivBody");
+};
+Util.reportPrintDiv = function(options, callback) {
+    var printWindowProperties = "toolbar=no, location=no, directories=no, status=no, " +
+        "menubar=yes, scrollbars=yes, resizable=yes, width=" + options.width + ", height=" + options.height;
+    var printWindow = window.open("about:blank", "Print Order", printWindowProperties);
+    printWindow.document.write("<div id='printDivBody'>This is a dummy div</div>");
+
+    Util.loadResource(printWindow, "../bootstrap/css/bootstrap.css", "css");
+    Util.loadResource(printWindow, "../foundation/stylesheets/foundation.css", "css");
+//    Util.loadResource(printWindow, "../css/print.css", "css");
+    Util.loadResource(printWindow, "../css/printReport.css", "css");
+    Util.loadResource(printWindow, "../css/general.css", "css");
+
+    callback(printWindow, "printDivBody");
 };

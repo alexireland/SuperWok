@@ -38,6 +38,14 @@ DateTime.Now = {
 };
 
 DateTime.please = {
+    getTodayDateForID:function(millis){
+        var currentTime = millis ? new Date(millis) : new Date ();
+        var mnths = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+        var currentDate = currentTime.getDate();
+        var currentMonth = currentTime.getMonth();
+        var currentYear = currentTime.getFullYear();
+        return currentDate +mnths[currentMonth]+ currentYear;
+    },
     getTime:function(millis) {
         var currentTime = new Date(millis) ? new Date(millis) : new Date ();
         var currentHour   = this.padTime(currentTime.getHours());
@@ -50,7 +58,7 @@ DateTime.please = {
         var currentDate = currentTime.getDate();
         var currentMonth = currentTime.getMonth();
         var currentYear = currentTime.getFullYear();
-	    return currentDate + " " + mnths[currentMonth] + " " + currentYear;
+        return currentDate + " " + mnths[currentMonth] + " " + currentYear;
     },
     getUTCTime:function(millis) {
         var currentTime = millis ? new Date(millis) : new Date ();
@@ -73,8 +81,11 @@ DateTime.please = {
 	    return parseInt(new Date().getTime(), 10)
     },
     getMilliseconds:function(str) {
-		var dateParts = DateTime.splitDate(str);
-	    return Date.UTC(dateParts[0], dateParts[1], dateParts[2], dateParts[3], dateParts[4], dateParts[5], dateParts[6]);
+        if (jQuery.trim(str) !== "") {
+            var dateParts = DateTime.splitDate(str);
+            return Date.UTC(dateParts[0], dateParts[1], dateParts[2], dateParts[3], dateParts[4], dateParts[5], dateParts[6]);
+        }
+        return -1;
     },
 	getGUIDDate : function(millis) {
 		millis = millis ? millis : DateTime.please.getCurrentMilliseconds();
@@ -163,68 +174,71 @@ DateTime.pad = function(val) {
 };
 
 DateTime.splitDate = function(str) {
-	var lstDate_Time = str.split(" ");
-	var strDate = lstDate_Time[0];
-	var strMonth = lstDate_Time[1];
-	var strYear = lstDate_Time[2];
-	var strTimeHour = lstDate_Time[3].split(":");
-	var strHour = strTimeHour[0];
-	var strMin = strTimeHour[1];
-	var d = new Date();
-	var strSeconds = d.getUTCSeconds(); //this gives you seconds[0-60] for a brand new date, not for the one passed in
-	var strMilliSeconds = d.getUTCMilliseconds(); //this gives you milliseconds[0-999] for a brand new date, not for the one passed in
+    if(!str) {
+        str = DateTime.please.getUTCDateTime();
+    }
+    var lstDate_Time = str.split(" ");
+    var strDate = lstDate_Time[0];
+    var strMonth = lstDate_Time[1];
+    var strYear = lstDate_Time[2];
+    var strTimeHour = lstDate_Time[3].split(":");
+    var strHour = strTimeHour[0];
+    var strMin = strTimeHour[1];
+    var d = new Date();
+    var strSeconds = d.getUTCSeconds(); //this gives you seconds[0-60] for a brand new date, not for the one passed in
+    var strMilliSeconds = d.getUTCMilliseconds(); //this gives you milliseconds[0-999] for a brand new date, not for the one passed in
 
-	var intMonth = 0;
-	if(strMonth==="Jan") {
-		intMonth = 0;
-	}
-	if(strMonth==="Feb") {
-		intMonth = 1;
-	}
-	if(strMonth==="Mar") {
-		intMonth = 2;
-	}
-	if(strMonth==="Apr") {
-		intMonth = 3;
-	}
-	if(strMonth==="May") {
-		intMonth = 4;
-	}
-	if(strMonth==="Jun") {
-		intMonth = 5;
-	}
-	if(strMonth==="Jul") {
-		intMonth = 6;
-	}
-	if(strMonth==="Aug") {
-		intMonth = 7;
-	}
-	if(strMonth==="Sep") {
-		intMonth = 8;
-	}
-	if(strMonth==="Oct") {
-		intMonth = 9;
-	}
-	if(strMonth==="Nov") {
-		intMonth = 10;
-	}
-	if(strMonth==="Dec") {
-		intMonth = 11;
-	}
+    var intMonth = 0;
+    if(strMonth==="Jan") {
+        intMonth = 0;
+    }
+    if(strMonth==="Feb") {
+        intMonth = 1;
+    }
+    if(strMonth==="Mar") {
+        intMonth = 2;
+    }
+    if(strMonth==="Apr") {
+        intMonth = 3;
+    }
+    if(strMonth==="May") {
+        intMonth = 4;
+    }
+    if(strMonth==="Jun") {
+        intMonth = 5;
+    }
+    if(strMonth==="Jul") {
+        intMonth = 6;
+    }
+    if(strMonth==="Aug") {
+        intMonth = 7;
+    }
+    if(strMonth==="Sep") {
+        intMonth = 8;
+    }
+    if(strMonth==="Oct") {
+        intMonth = 9;
+    }
+    if(strMonth==="Nov") {
+        intMonth = 10;
+    }
+    if(strMonth==="Dec") {
+        intMonth = 11;
+    }
 
-	var intYear  = DateTime.pad(parseInt(strYear, 10));
-		intMonth = DateTime.pad(intMonth);
-	var intDay = DateTime.pad(parseInt(strDate, 10));
-	var intHour   = DateTime.pad(parseInt(strHour, 10));
-	var intMinute = DateTime.pad(parseInt(strMin, 10));
-	var intSeconds = DateTime.pad(parseInt(strSeconds, 10));
-	var intMilliSeconds = DateTime.pad(parseInt(strMilliSeconds, 10));
+    var intYear  = DateTime.pad(parseInt(strYear, 10));
+    intMonth = DateTime.pad(intMonth);
+    var intDay = DateTime.pad(parseInt(strDate, 10));
+    var intHour   = DateTime.pad(parseInt(strHour, 10));
+    var intMinute = DateTime.pad(parseInt(strMin, 10));
+    var intSeconds = DateTime.pad(parseInt(strSeconds, 10));
+    var intMilliSeconds = DateTime.pad(parseInt(strMilliSeconds, 10));
 
-	console.log("intYear: " + intYear + " intMonth: " + intMonth + " intDay: " + intDay +
-			" intHour: " + intHour + " intMinute: " + intMinute + " intSeconds: " + intSeconds +
-			" intMilliseconds: " + intMilliSeconds);
+    console.log("intYear: " + intYear + " intMonth: " + intMonth + " intDay: " + intDay +
+        " intHour: " + intHour + " intMinute: " + intMinute + " intSeconds: " + intSeconds +
+        " intMilliseconds: " + intMilliSeconds);
 
-	return [intYear, intMonth, intDay, intHour, intMinute, intSeconds, intMilliSeconds];
+    return [intYear, intMonth, intDay, intHour, intMinute, intSeconds, intMilliSeconds];
 };
 
 /*

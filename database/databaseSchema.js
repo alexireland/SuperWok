@@ -2,14 +2,14 @@
 
 var SuperWokDatabase = SuperWokDatabase  || {};  //Initialise Namespace
 
-SuperWokDatabase.MAP_DETAILS = persistence.define('MAP_DETAILS',{
-    ADDRESS:"TEXT",
-	PAGE_REFERENCE : "TEXT",
-    EXPIRED:"TEXT"
-});
+//SuperWokDatabase.MAP_DETAILS = persistence.define('MAP_DETAILS',{
+//    ADDRESS:"TEXT",
+//	PAGE_REFERENCE : "TEXT",
+//    EXPIRED:"TEXT"
+//});
 SuperWokDatabase.CUSTOMER_DETAILS = persistence.define('CUSTOMER_DETAILS',{
     CUSTOMER_ID:"TEXT",
-    NAME:"TEXT",
+    CUSTOMER_NAME:"TEXT",
     FIRST_NAME:"TEXT",
     FAMILY_NAME:"TEXT",
     PHONE_NUMBER:"NUMBER",
@@ -45,42 +45,46 @@ SuperWokDatabase.ORDER_TYPE_CATEGORY = persistence.define('ORDER_TYPE_CATEGORY',
     ORDER_TYPE_CATEGORY_NAME:"TEXT",
     EXPIRED:"TEXT"
 });
-SuperWokDatabase.ORDER_STATUS = persistence.define('ORDER_STATUS',{
-    ORDER_STATUS_ID:"TEXT",
-    ORDER_STATUS_CODE:"TEXT",
-    ORDER_STATUS_NAME:"TEXT",
-    EXPIRED:"TEXT"
-});
-SuperWokDatabase.PAY_STATUS = persistence.define('PAY_STATUS',{
-    PAY_STATUS_ID:"TEXT",
-    PAY_STATUS_CODE:"TEXT",
-    PAY_STATUS_NAME:"TEXT",
-    EXPIRED:"TEXT"
-});
+//
+//SuperWokDatabase.ORDER_STATUS = persistence.define('ORDER_STATUS',{
+//    ORDER_STATUS_ID:"TEXT",
+//    ORDER_STATUS_CODE:"TEXT",
+//    ORDER_STATUS_NAME:"TEXT",
+//    EXPIRED:"TEXT"
+//});
+//SuperWokDatabase.PAY_STATUS = persistence.define('PAY_STATUS',{
+//    PAY_STATUS_ID:"TEXT",
+//    PAY_STATUS_CODE:"TEXT",
+//    PAY_STATUS_NAME:"TEXT",
+//    EXPIRED:"TEXT"
+//});
 SuperWokDatabase.ORDER_DATA = persistence.define('ORDER_DATA',{
 
     ORDER_ID:"INT",
-    TODAY_ID:"INT",
+    TODAY_ID:"TEXT",
     ORDER_TIME:"INT",
     ORDER_FINISHED:"TEXT",
     ORDER_PAIED:"TEXT",
     ORDER_CANCELLED:"TEXT",
+    ORDER_DELIVERY_CHARGE:"INT",
     NO_OF_ORDERED_ITEM:"TEXT",
-    ORDER_TOTAL_PRICE:"NUMERIC",
+    ORDER_UPDATED:"TEXT",
+    ORDER_TOTAL_PRICE:"INT",
     EXPIRED:"TEXT"
 
 });
 SuperWokDatabase.ORDERED_ITEM = persistence.define('ORDERED_ITEM',{
     ORDERED_ITEM_ID:"TEXT",
-    ORDERED_ITEM_TIME:"INT",
+    ORDERED_ITEM_TIME:"NUMERIC",
+    ORDERED_ITEM_NEW_PRICE:"NUMERIC",
     ORDERED_ITEM_QUANTITY:"TEXT",
     ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
     EXPIRED:"TEXT"
 });
 SuperWokDatabase.ITEM_CATEGORY.hasMany("ITEM_ITEM_CATEGORY_ID", SuperWokDatabase.ITEM, "ITEM_CATEGORY_ID");
 SuperWokDatabase.ORDER_TYPE_CATEGORY.hasMany("ORDER_ORDER_TYPE_CATEGORY_ID", SuperWokDatabase.ORDER_DATA, "ORDER_TYPE_CATEGORY_ID");
-SuperWokDatabase.ORDER_STATUS.hasMany("ORDER_ORDER_STATUS_ID", SuperWokDatabase.ORDER_DATA, "ORDER_STATUS_ID");
-SuperWokDatabase.PAY_STATUS.hasMany("ORDER_PAY_STATUS_ID", SuperWokDatabase.ORDER_DATA, "PAY_STATUS_ID");
+//SuperWokDatabase.ORDER_STATUS.hasMany("ORDER_ORDER_STATUS_ID", SuperWokDatabase.ORDER_DATA, "ORDER_STATUS_ID");
+//SuperWokDatabase.PAY_STATUS.hasMany("ORDER_PAY_STATUS_ID", SuperWokDatabase.ORDER_DATA, "PAY_STATUS_ID");
 SuperWokDatabase.ITEM.hasMany("ORDERED_ITEM_ITEM_ID", SuperWokDatabase.ORDERED_ITEM, "ITEM_ID");
 SuperWokDatabase.ORDER_DATA.hasMany("ORDERED_ITEM_ITEM_ID", SuperWokDatabase.ORDERED_ITEM, "ORDER_DATA_ID");
 SuperWokDatabase.CUSTOMER_DETAILS.hasMany("CUSTOMER_DETAIL_ID_ORDERED_DATA", SuperWokDatabase.ORDER_DATA, "CUSTOMER_DETAIL_ID");

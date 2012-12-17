@@ -1,6 +1,7 @@
 CACHE MANIFEST
 
 CACHE:
+
 ./bootstrap/css/bootstrap-responsive.css
 ./bootstrap/css/bootstrap-responsive.min.css
 ./bootstrap/css/bootstrap.css
@@ -10,10 +11,11 @@ CACHE:
 ./bootstrap/js/bootstrap.js
 ./bootstrap/js/bootstrap.min.js
 ./css/general.css
+./css/mobiscroll-1.5.css
+./css/print.css
 ./database/databaseSchema.js
 ./database/sampleData.js
 ./database/superwokDatabase.js
-
 ./foundation/javascripts/app.js
 ./foundation/javascripts/foundation.min.js
 ./foundation/javascripts/jquery.foundation.accordion.js
@@ -37,7 +39,8 @@ CACHE:
 ./html/index.html
 ./html/login.html
 ./html/report.html
-
+./mobiScroll/mobiscroll-1.5.js
+./mobiScroll/mobiscroll-1.5.min.js
 ./persistence/persistence.js
 ./persistence/persistence.store.memory.js
 ./persistence/persistence.store.sql.js
@@ -45,7 +48,9 @@ CACHE:
 ./script/customerDetail.js
 ./script/index.js
 ./script/jquery.min.js
+./script/report.js
 ./script/timeDate.js
+./script/util.js
 
 HASH:
 *

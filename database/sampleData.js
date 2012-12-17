@@ -26,49 +26,49 @@ SuperWok_SampleData.load = function () {
     persistence.add(orderTypeDelivery);
 
 
-    var orderStatusOpen = new SuperWokDatabase.ORDER_STATUS({
-        ORDER_STATUS_ID:"TEXT",
-        ORDER_STATUS_CODE:"TEXT",
-        ORDER_STATUS_NAME:"Open",
-        EXPIRED:"TEXT"
-    });
-    var orderStatusOrderd = new SuperWokDatabase.ORDER_STATUS({
-        ORDER_STATUS_ID:"TEXT",
-        ORDER_STATUS_CODE:"TEXT",
-        ORDER_STATUS_NAME:"Orderd",
-        EXPIRED:"TEXT"
-    });
-    var orderStatusFinished = new SuperWokDatabase.ORDER_STATUS({
-        ORDER_STATUS_ID:"TEXT",
-        ORDER_STATUS_CODE:"TEXT",
-        ORDER_STATUS_NAME:"Finished",
-        EXPIRED:"TEXT"
-    });
-    var orderStatusCancelled = new SuperWokDatabase.ORDER_STATUS({
-        ORDER_STATUS_ID:"TEXT",
-        ORDER_STATUS_CODE:"TEXT",
-        ORDER_STATUS_NAME:"Cancelled",
-        EXPIRED:"TEXT"
-    });
+//    var orderStatusOpen = new SuperWokDatabase.ORDER_STATUS({
+//        ORDER_STATUS_ID:"TEXT",
+//        ORDER_STATUS_CODE:"TEXT",
+//        ORDER_STATUS_NAME:"Open",
+//        EXPIRED:"TEXT"
+//    });
+//    var orderStatusOrderd = new SuperWokDatabase.ORDER_STATUS({
+//        ORDER_STATUS_ID:"TEXT",
+//        ORDER_STATUS_CODE:"TEXT",
+//        ORDER_STATUS_NAME:"Orderd",
+//        EXPIRED:"TEXT"
+//    });
+//    var orderStatusFinished = new SuperWokDatabase.ORDER_STATUS({
+//        ORDER_STATUS_ID:"TEXT",
+//        ORDER_STATUS_CODE:"TEXT",
+//        ORDER_STATUS_NAME:"Finished",
+//        EXPIRED:"TEXT"
+//    });
+//    var orderStatusCancelled = new SuperWokDatabase.ORDER_STATUS({
+//        ORDER_STATUS_ID:"TEXT",
+//        ORDER_STATUS_CODE:"TEXT",
+//        ORDER_STATUS_NAME:"Cancelled",
+//        EXPIRED:"TEXT"
+//    });
 
-    persistence.add(orderStatusOpen);
-    persistence.add(orderStatusOrderd);
-    persistence.add(orderStatusFinished);
-    persistence.add(orderStatusCancelled);
-    var payStatusPaid = new SuperWokDatabase.PAY_STATUS({
-        PAY_STATUS_ID:"TEXT",
-        PAY_STATUS_CODE:"TEXT",
-        PAY_STATUS_NAME:"Paid",
-        EXPIRED:"TEXT"
-    });
-    var payStatusUnpaid = new SuperWokDatabase.PAY_STATUS({
-        PAY_STATUS_ID:"TEXT",
-        PAY_STATUS_CODE:"TEXT",
-        PAY_STATUS_NAME:"Unpaid",
-        EXPIRED:"TEXT"
-    });
-    persistence.add(payStatusPaid);
-    persistence.add(payStatusUnpaid);
+//    persistence.add(orderStatusOpen);
+//    persistence.add(orderStatusOrderd);
+//    persistence.add(orderStatusFinished);
+//    persistence.add(orderStatusCancelled);
+//    var payStatusPaid = new SuperWokDatabase.PAY_STATUS({
+//        PAY_STATUS_ID:"TEXT",
+//        PAY_STATUS_CODE:"TEXT",
+//        PAY_STATUS_NAME:"Paid",
+//        EXPIRED:"TEXT"
+//    });
+//    var payStatusUnpaid = new SuperWokDatabase.PAY_STATUS({
+//        PAY_STATUS_ID:"TEXT",
+//        PAY_STATUS_CODE:"TEXT",
+//        PAY_STATUS_NAME:"Unpaid",
+//        EXPIRED:"TEXT"
+//    });
+//    persistence.add(payStatusPaid);
+//    persistence.add(payStatusUnpaid);
 
 
    var specialStarters = new SuperWokDatabase.ITEM_CATEGORY({
@@ -229,7 +229,7 @@ SuperWok_SampleData.load = function () {
     var crispyPrawnsWithSuperWok = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S1",
-        ITEM_NAME:"Crispy Prawns With SuperWok Special Sauces",
+        ITEM_NAME:"Crispy Prawns W/Special Sauces",
         ITEM_PRICE:5.80,
         ITEM_FULL_DESCRIPTION:"Crispy Prawns With SuperWok Special Sauces(6)",
         EXPIRED:"NO"
@@ -238,7 +238,7 @@ SuperWok_SampleData.load = function () {
     var crispyBreastChickenWithSuperWok = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S2",
-        ITEM_NAME:"Crispy Breast Chicken With SuperWok Chilli Sauce",
+        ITEM_NAME:"Crispy Breast Chicken W/Chilli",
         ITEM_PRICE:5.20,
         ITEM_FULL_DESCRIPTION:"Crispy Breast Chicken With SuperWok Chilli Sauce",
         EXPIRED:"NO"
@@ -276,47 +276,88 @@ SuperWok_SampleData.load = function () {
     var superWokCrispyDuck = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S5",
-        ITEM_NAME:"Super Wok Crispy Duck",
+        ITEM_NAME:"Crispy Duck",
         ITEM_PRICE:10.50,
         ITEM_FULL_DESCRIPTION:"Super Wok Crispy Duck(Served with lemon grass sauce)",
         EXPIRED:"NO"
     });
-    var superWokSpecialStyleHomeMadeCurry1 = new SuperWokDatabase.ITEM({
+    var superWokSpecialStyleHomeMadeCurryChicken = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S6",
-        ITEM_NAME:"Super Wok Special Style Homemade Curry(Chicken Or Beef)",
+        ITEM_NAME:"Special Style Homemade Curry Chicken",
         ITEM_PRICE:8.50,
         ITEM_FULL_DESCRIPTION:"Super Wok Special Style Homemade Curry(Chicken Or Beef",
         EXPIRED:"NO"
     });
-    var superWokSpecialStyleHomeMadeCurry2 = new SuperWokDatabase.ITEM({
+    var superWokSpecialStyleHomeMadeCurryBeef = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S6",
-        ITEM_NAME:"Super Wok Special Style Homemade Curry(KingPrawn Or House Special)",
+        ITEM_NAME:"Special Style Homemade Curry Beef",
+        ITEM_PRICE:8.50,
+        ITEM_FULL_DESCRIPTION:"Super Wok Special Style Homemade Curry(Chicken Or Beef",
+        EXPIRED:"NO"
+    });
+    var superWokSpecialStyleHomeMadeCurryKingPrawn = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"S6",
+        ITEM_NAME:"Special Style Homemade Curry KingPrawn",
         ITEM_PRICE:8.80,
         ITEM_FULL_DESCRIPTION:"Super Wok Special Style Homemade Curry(KingPrawn Or House Special)",
         EXPIRED:"NO"
     });
-    var broccoliWithGingerRedChilliSauce1 = new SuperWokDatabase.ITEM({
+    var superWokSpecialStyleHomeMadeCurryHouseSpecial = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"S6",
+        ITEM_NAME:"Special Style Homemade Curry House Special",
+        ITEM_PRICE:8.80,
+        ITEM_FULL_DESCRIPTION:"Super Wok Special Style Homemade Curry(KingPrawn Or House Special)",
+        EXPIRED:"NO"
+    });
+    var broccoliWithGingerRedChilliSauceChicken = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S7",
-        ITEM_NAME:"Broccoli With Ginger Red Chilli Sauce(Chicken Or Beef)",
+        ITEM_NAME:"Broccoli W/Ginger Red Chilli Chicken",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"Broccoli With Ginger Red Chilli Sauce(Chicken Or Beef)",
         EXPIRED:"NO"
     });
-    var broccoliWithGingerRedChilliSauce2 = new SuperWokDatabase.ITEM({
+    var broccoliWithGingerRedChilliSauceBeef = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S7",
-        ITEM_NAME:"Broccoli With Ginger Red Chilli Sauce(King Prawn Or House Special)",
+        ITEM_NAME:"Broccoli W/Ginger Red Chilli Beef",
+        ITEM_PRICE:7.50,
+        ITEM_FULL_DESCRIPTION:"Broccoli With Ginger Red Chilli Sauce(Chicken Or Beef)",
+        EXPIRED:"NO"
+    });
+    var broccoliWithGingerRedChilliSauceKingPrawn = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"S7",
+        ITEM_NAME:"Broccoli W/Ginger Red Chilli KingPrawn",
         ITEM_PRICE:8.50,
         ITEM_FULL_DESCRIPTION:"Broccoli With Ginger Red Chilli Sauce(King Prawn Or House Special)",
         EXPIRED:"NO"
     });
-    var crispyShreddedChickenOrBeefWithHotHoneySauce = new SuperWokDatabase.ITEM({
+
+    var broccoliWithGingerRedChilliSauceHouseSpecial = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"S7",
+        ITEM_NAME:"Broccoli W/Ginger Red Chilli House Special",
+        ITEM_PRICE:8.50,
+        ITEM_FULL_DESCRIPTION:"Broccoli With Ginger Red Chilli Sauce(King Prawn Or House Special)",
+        EXPIRED:"NO"
+    });
+    var crispyShreddedChickenWithHotHoneySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"S8",
-        ITEM_NAME:"Crispy Shredded Chicken Or Beef With Hot Honey Sauce",
+        ITEM_NAME:"Crispy Shredded Chicken W/Hot Honey",
+        ITEM_PRICE:7.80,
+        ITEM_FULL_DESCRIPTION:"Crispy Shredded Chicken Or Beef With Hot Honey Sauce",
+        EXPIRED:"NO"
+    });
+    var crispyShreddedBeefWithHotHoneySauce = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"S8",
+        ITEM_NAME:"Crispy Shredded Beef W/Hot Honey",
         ITEM_PRICE:7.80,
         ITEM_FULL_DESCRIPTION:"Crispy Shredded Chicken Or Beef With Hot Honey Sauce",
         EXPIRED:"NO"
@@ -347,31 +388,49 @@ SuperWok_SampleData.load = function () {
     });
 
     persistence.add(superWokCrispyDuck);
-    persistence.add(superWokSpecialStyleHomeMadeCurry1);
-    persistence.add(superWokSpecialStyleHomeMadeCurry2);
-    persistence.add(broccoliWithGingerRedChilliSauce1);
-    persistence.add(broccoliWithGingerRedChilliSauce2);
-    persistence.add(crispyShreddedChickenOrBeefWithHotHoneySauce);
+    persistence.add(superWokSpecialStyleHomeMadeCurryChicken);
+    persistence.add(superWokSpecialStyleHomeMadeCurryBeef);
+    persistence.add(superWokSpecialStyleHomeMadeCurryKingPrawn);
+    persistence.add(superWokSpecialStyleHomeMadeCurryHouseSpecial);
+    persistence.add(broccoliWithGingerRedChilliSauceKingPrawn);
+    persistence.add(broccoliWithGingerRedChilliSauceHouseSpecial);
+    persistence.add(broccoliWithGingerRedChilliSauceBeef);
+    persistence.add(broccoliWithGingerRedChilliSauceChicken);
+    persistence.add(crispyShreddedChickenWithHotHoneySauce);
+    persistence.add(crispyShreddedBeefWithHotHoneySauce);
     persistence.add(superWokCurryFriedRice);
     persistence.add(superWokCurryFriedChowMein);
     persistence.add(saltAndPepperSquidMainSize);
 
     specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokCrispyDuck);
-    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurry1);
-    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurry2);
-    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauce1);
-    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauce2);
-    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(crispyShreddedChickenOrBeefWithHotHoneySauce);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurryChicken);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurryBeef);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurryKingPrawn);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokSpecialStyleHomeMadeCurryHouseSpecial);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauceChicken);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauceHouseSpecial);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauceBeef);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(broccoliWithGingerRedChilliSauceKingPrawn);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(crispyShreddedChickenWithHotHoneySauce);
+    specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(crispyShreddedBeefWithHotHoneySauce);
     specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokCurryFriedRice);
     specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(superWokCurryFriedChowMein);
     specialMainCourse.ITEM_ITEM_CATEGORY_ID.add(saltAndPepperSquidMainSize);
 
 
-    var springRollsWithSweetChilliSauce = new SuperWokDatabase.ITEM({
+    var springRollsWithSweetChilliSauceVeg = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"1",
-        ITEM_NAME:"Spring Rolls With Sweet Chilli Sauce",
-        ITEM_PRICE:3.30,
+        ITEM_NAME:"Spring Rolls Veg",
+        ITEM_PRICE:3.00,
+        ITEM_FULL_DESCRIPTION:"Spring Rolls With Sweet Chilli Sauce(Meat Or Vegetabls)",
+        EXPIRED:"NO"
+    });
+    var springRollsWithSweetChilliSauceMeet = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"1",
+        ITEM_NAME:"Spring Rolls Meat",
+        ITEM_PRICE:3.00,
         ITEM_FULL_DESCRIPTION:"Spring Rolls With Sweet Chilli Sauce(Meat Or Vegetabls)",
         EXPIRED:"NO"
     });
@@ -394,7 +453,7 @@ SuperWok_SampleData.load = function () {
     var crispyWontonWithSweetSourSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"4",
-        ITEM_NAME:"Crispy Wonton With Sweet&Sour",
+        ITEM_NAME:"Crispy Wonton W/Sweet&Sour",
         ITEM_PRICE:4.50,
         ITEM_FULL_DESCRIPTION:"Crispy Wonton With Sweet&Sour",
         EXPIRED:"NO"
@@ -402,7 +461,7 @@ SuperWok_SampleData.load = function () {
     var skeweredChickenWithSataySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"5",
-        ITEM_NAME:"Skewered Chicken With Satay Sauce",
+        ITEM_NAME:"Skewered Chicken W/Satay Sauce",
         ITEM_PRICE:4.80,
         ITEM_FULL_DESCRIPTION:"Skewered Chicken With Satay Sauce(3)",
         EXPIRED:"NO"
@@ -426,7 +485,7 @@ SuperWok_SampleData.load = function () {
     var shreddedChickenWithSaltAndPepper = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"8",
-        ITEM_NAME:"Shredded Chicken With Salt & Pepper",
+        ITEM_NAME:"Shredded Chicken W/Salt & Pepper",
         ITEM_PRICE:5.20,
         ITEM_FULL_DESCRIPTION:"Shredded Chicken With Salt & Pepper",
         EXPIRED:"NO"
@@ -439,18 +498,34 @@ SuperWok_SampleData.load = function () {
         ITEM_FULL_DESCRIPTION:"Platter for 2 ( 2spring rolls,1 prawntoast,4 chicken wings,2 spare ribs,2 skewered chicken staty, 4 crispy wonton)",
         EXPIRED:"NO"
     });
-    var yukSong1 = new SuperWokDatabase.ITEM({
+    var yukSong1Pork = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"10",
-        ITEM_NAME:"Yuk Sung for 1",
+        ITEM_NAME:"Yuk Sung for 1 Pork",
         ITEM_PRICE:5.80,
         ITEM_FULL_DESCRIPTION:"Yuk Sung (Choice of chicken or pork)",
         EXPIRED:"NO"
     });
-    var yukSong2 = new SuperWokDatabase.ITEM({
+    var yukSong1Chicken = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"10",
-        ITEM_NAME:"Yuk Sung for 2",
+        ITEM_NAME:"Yuk Sung for 1 Chicken",
+        ITEM_PRICE:5.80,
+        ITEM_FULL_DESCRIPTION:"Yuk Sung (Choice of chicken or pork)",
+        EXPIRED:"NO"
+    });
+    var yukSong2Pork = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"10",
+        ITEM_NAME:"Yuk Sung for 2 Pork",
+        ITEM_PRICE:9.80,
+        ITEM_FULL_DESCRIPTION:"Yuk Sung (Choice of chicken or pork)",
+        EXPIRED:"NO"
+    });
+    var yukSong2Chicken = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"10",
+        ITEM_NAME:"Yuk Sung for 2 Chicken",
         ITEM_PRICE:9.80,
         ITEM_FULL_DESCRIPTION:"Yuk Sung (Choice of chicken or pork)",
         EXPIRED:"NO"
@@ -473,8 +548,29 @@ SuperWok_SampleData.load = function () {
     });
 
 
+  persistence.add(springRollsWithSweetChilliSauceMeet);
+  persistence.add(springRollsWithSweetChilliSauceVeg);
+  persistence.add(spareRibsWithSauces);
+  persistence.add(chickenWings);
+  persistence.add(crispyWontonWithSweetSourSauce);
+  persistence.add(skeweredChickenWithSataySauce);
+  persistence.add(sesamePrawnToast);
+  persistence.add(saltAndPepperCrispyPrawn);
+  persistence.add(shreddedChickenWithSaltAndPepper);
+  persistence.add(platterFor2);
+  persistence.add(yukSong1Pork);
+    persistence.add(yukSong1Chicken);
+    persistence.add(yukSong2Pork);
+    persistence.add(yukSong2Chicken);
+    persistence.add(aromaticDuck1);
+    persistence.add(aromaticDuck2);
 
-    starters.ITEM_ITEM_CATEGORY_ID.add(springRollsWithSweetChilliSauce);
+
+
+
+    starters.ITEM_ITEM_CATEGORY_ID.add(springRollsWithSweetChilliSauceMeet);
+    starters.ITEM_ITEM_CATEGORY_ID.add(springRollsWithSweetChilliSauceVeg);
+
     starters.ITEM_ITEM_CATEGORY_ID.add(spareRibsWithSauces);
     starters.ITEM_ITEM_CATEGORY_ID.add(chickenWings);
     starters.ITEM_ITEM_CATEGORY_ID.add(crispyWontonWithSweetSourSauce);
@@ -483,8 +579,10 @@ SuperWok_SampleData.load = function () {
     starters.ITEM_ITEM_CATEGORY_ID.add(saltAndPepperCrispyPrawn);
     starters.ITEM_ITEM_CATEGORY_ID.add(shreddedChickenWithSaltAndPepper);
     starters.ITEM_ITEM_CATEGORY_ID.add(platterFor2);
-    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong1);
-    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong2);
+    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong1Chicken);
+    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong2Chicken);
+    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong1Pork);
+    starters.ITEM_ITEM_CATEGORY_ID.add(yukSong2Pork);
     starters.ITEM_ITEM_CATEGORY_ID.add(aromaticDuck1);
     starters.ITEM_ITEM_CATEGORY_ID.add(aromaticDuck2);
 
@@ -575,7 +673,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithCurrySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"20",
-        ITEM_NAME:"Chicken With Curry Sauce",
+        ITEM_NAME:"Chicken W/Curry Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"Fillet Of Chicken With Curry Sauce",
         EXPIRED:"NO"
@@ -583,7 +681,7 @@ SuperWok_SampleData.load = function () {
     var sweetAndSourChickenHongKongStyle = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"21",
-        ITEM_NAME:"Sweet & Sour Chicken Hong Kong Style",
+        ITEM_NAME:"Sweet & Sour Chicken HongKong Style",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -591,7 +689,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithChilliGarlicSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"22",
-        ITEM_NAME:"Chicken With Chilli Galic",
+        ITEM_NAME:"Chicken W/Chilli Galic",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -615,7 +713,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithCashewNuts = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"25",
-        ITEM_NAME:"Chicken With Cashew Nuts",
+        ITEM_NAME:"Chicken W/Cashew Nuts",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -623,7 +721,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithPineapple = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"26",
-        ITEM_NAME:"Chicken With Pineapple",
+        ITEM_NAME:"Chicken W/Pineapple",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -631,7 +729,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithGingerAndSpringOnion = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"27",
-        ITEM_NAME:"Chicken With Ginger & Spring Onion",
+        ITEM_NAME:"Chicken W/Ginger & Spring Onion",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -639,7 +737,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithKongpoSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"28",
-        ITEM_NAME:"Chicken With Kongpo Sauce",
+        ITEM_NAME:"Chicken W/Kongpo Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -647,7 +745,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithCantoneseSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"29",
-        ITEM_NAME:"Chicken With Cantonese Sauce",
+        ITEM_NAME:"Chicken W/Cantonese Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -663,7 +761,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithBlackPepper = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"31",
-        ITEM_NAME:"Chicken With Black Pepper",
+        ITEM_NAME:"Chicken W/Black Pepper",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -671,7 +769,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithSataySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"32",
-        ITEM_NAME:"Chicken With Satay Sauce",
+        ITEM_NAME:"Chicken W/Satay Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -679,7 +777,7 @@ SuperWok_SampleData.load = function () {
     var filletOfChickenWithSzechuanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"33",
-        ITEM_NAME:"Chicken With Szechuan Sauce",
+        ITEM_NAME:"Chicken W/Szechuan Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -687,7 +785,7 @@ SuperWok_SampleData.load = function () {
     var crispyChickenWithChoiceOfSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"34",
-        ITEM_NAME:"Crispy Chicken With Choice Of Sauce",
+        ITEM_NAME:"Crispy Chicken W/Choice Of Sauce",
         ITEM_PRICE:7.80,
         ITEM_FULL_DESCRIPTION:"Crispy Chicken With Choice Of Sauce( Lemon,Orange,Satay,hot&HOney Or Cantonese)",
         EXPIRED:"NO"
@@ -747,7 +845,7 @@ SuperWok_SampleData.load = function () {
     var beefWithCurrySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"36",
-        ITEM_NAME:"Beef With Curry Sauce",
+        ITEM_NAME:"Beef W/Curry Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -755,7 +853,7 @@ SuperWok_SampleData.load = function () {
     var beefWithChilliGarlicSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"37",
-        ITEM_NAME:"Beef With Chilli Garlic Sauce",
+        ITEM_NAME:"Beef W/Chilli Garlic Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -763,7 +861,7 @@ SuperWok_SampleData.load = function () {
     var beefChopSuey = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"38",
-        ITEM_NAME:"Beef With Chop Suey",
+        ITEM_NAME:"Beef W/Chop Suey",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -771,7 +869,7 @@ SuperWok_SampleData.load = function () {
     var beefWithMushroom = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"39",
-        ITEM_NAME:"Beef With Mushroom",
+        ITEM_NAME:"Beef W/Mushroom",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -779,7 +877,7 @@ SuperWok_SampleData.load = function () {
     var beefWithCashewNuts = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"40",
-        ITEM_NAME:"Beef With Cashew Nuts",
+        ITEM_NAME:"Beef W/Cashew Nuts",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -787,7 +885,7 @@ SuperWok_SampleData.load = function () {
     var beefWithPineapple = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"41",
-        ITEM_NAME:"Beef With Pineapple",
+        ITEM_NAME:"Beef W/Pineapple",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -795,7 +893,7 @@ SuperWok_SampleData.load = function () {
     var beefWithGingerAndSpringOnion = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"42",
-        ITEM_NAME:"Beef With Ginger And Spring Onion",
+        ITEM_NAME:"Beef W/Ginger And Spring Onion",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -803,7 +901,7 @@ SuperWok_SampleData.load = function () {
     var beefWithKongpoSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"43",
-        ITEM_NAME:"Beef With Kongpo Sauce",
+        ITEM_NAME:"Beef W/Kongpo Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -811,7 +909,7 @@ SuperWok_SampleData.load = function () {
     var beefWithCantoneseSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"44",
-        ITEM_NAME:"Beef With Cantonese Sauce",
+        ITEM_NAME:"Beef W/Cantonese Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -819,7 +917,7 @@ SuperWok_SampleData.load = function () {
     var beefWithBlackBeanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"45",
-        ITEM_NAME:"Beef With Black Bean Sauce",
+        ITEM_NAME:"Beef W/Black Bean Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -827,7 +925,7 @@ SuperWok_SampleData.load = function () {
     var beefWithBlackPepper = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"46",
-        ITEM_NAME:"Beef With Black Pepper",
+        ITEM_NAME:"Beef W/Black Pepper",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -835,7 +933,7 @@ SuperWok_SampleData.load = function () {
     var beefWithSataySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"47",
-        ITEM_NAME:"Beef With Satay Sauce",
+        ITEM_NAME:"Beef W/Satay Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -843,7 +941,7 @@ SuperWok_SampleData.load = function () {
     var beefWithSzechuanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"48",
-        ITEM_NAME:"Beef With Szechuan Sauce",
+        ITEM_NAME:"Beef W/Szechuan Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -883,7 +981,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithCurrySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"49",
-        ITEM_NAME:"King Prawn With Curry Sauce",
+        ITEM_NAME:"King Prawn W/Curry Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -891,7 +989,7 @@ SuperWok_SampleData.load = function () {
     var sweetAndSourKingPrawn = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"50",
-        ITEM_NAME:"Sweet & Sour King Prawn Hong Kong Style",
+        ITEM_NAME:"Sweet & Sour King Prawn HongKong Style",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -899,7 +997,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithChilliGalic = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"51",
-        ITEM_NAME:"King Prawn With Chilli Garlic Sauce",
+        ITEM_NAME:"King Prawn W/Chilli Garlic Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -907,7 +1005,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithChopSuey = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"52",
-        ITEM_NAME:"King Prawn With Chop Suey",
+        ITEM_NAME:"King Prawn W/Chop Suey",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -915,7 +1013,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithMushroom = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"53",
-        ITEM_NAME:"King Prawn With Mushroom",
+        ITEM_NAME:"King Prawn W/Mushroom",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -923,7 +1021,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithCashewNuts = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"54",
-        ITEM_NAME:"King Prawn With Cashew Nuts",
+        ITEM_NAME:"King Prawn W/Cashew Nuts",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -931,7 +1029,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithPineapple = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"55",
-        ITEM_NAME:"King Prawn With Pineapple",
+        ITEM_NAME:"King Prawn W/Pineapple",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -939,7 +1037,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithGingerAndSpringOnion = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"56",
-        ITEM_NAME:"King Prawn With Ginger & Spring Onion",
+        ITEM_NAME:"King Prawn W/Ginger & Spring Onion",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -947,7 +1045,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithKongpoSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"57",
-        ITEM_NAME:"King Prawn With Kongpo Sauce",
+        ITEM_NAME:"King Prawn W/Kongpo Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -955,7 +1053,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithCantoneseSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"58",
-        ITEM_NAME:"King Prawn With Cantonese Sauce",
+        ITEM_NAME:"King Prawn W/Cantonese Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -963,7 +1061,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithBlackBeanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"59",
-        ITEM_NAME:"King Prawn With BlackBean Sauce",
+        ITEM_NAME:"King Prawn W/BlackBean Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -971,7 +1069,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithBlackPepperSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"60",
-        ITEM_NAME:"King Prawn With Black Pepper Sauce",
+        ITEM_NAME:"King Prawn W/Black Pepper Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -979,7 +1077,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithSataySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"61",
-        ITEM_NAME:"King Prawn With Satay Sauce",
+        ITEM_NAME:"King Prawn W/Satay Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -987,7 +1085,7 @@ SuperWok_SampleData.load = function () {
     var kingPrawnWithSzechuanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"62",
-        ITEM_NAME:"King Prawn With Szechuan Sauce",
+        ITEM_NAME:"King Prawn W/Szechuan Sauce",
         ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1039,7 +1137,7 @@ SuperWok_SampleData.load = function () {
     var roastDuckWithBlackBeanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"64",
-        ITEM_NAME:"Roast Duck With Black Bean Sauce",
+        ITEM_NAME:"Roast Duck W/Black Bean Sauce",
         ITEM_PRICE:8.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1047,7 +1145,7 @@ SuperWok_SampleData.load = function () {
     var roastDuckWithBlackPepperSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"65",
-        ITEM_NAME:"Roast Duck With Black Pepper",
+        ITEM_NAME:"Roast Duck W/Black Pepper",
         ITEM_PRICE:8.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1063,7 +1161,7 @@ SuperWok_SampleData.load = function () {
     var roastDuckWithOrangeSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"67",
-        ITEM_NAME:"Roast Duck With Orange Sauce",
+        ITEM_NAME:"Roast Duck W/Orange Sauce",
         ITEM_PRICE:8.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1088,7 +1186,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithCurrySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"68",
-        ITEM_NAME:"Roast Pork With Curry Sauce",
+        ITEM_NAME:"Roast Pork W/Curry Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1104,7 +1202,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithChilliGarlicSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"70",
-        ITEM_NAME:"Roast Pork With Chilli Garlic Sauce",
+        ITEM_NAME:"Roast Pork W/Chilli Garlic Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1112,7 +1210,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWitChopSuey = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"71",
-        ITEM_NAME:"Roast Pork With Chop Suey",
+        ITEM_NAME:"Roast Pork W/Chop Suey",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1120,7 +1218,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithMushroom = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"72",
-        ITEM_NAME:"Roast Pork With Mushroom",
+        ITEM_NAME:"Roast Pork W/Mushroom",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1128,7 +1226,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithCashewNuts = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"73",
-        ITEM_NAME:"Roast Pork With Cashe Nuts",
+        ITEM_NAME:"Roast Pork W/Cashe Nuts",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1136,7 +1234,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithPineapple = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"74",
-        ITEM_NAME:"Roast Pork With Pineapple",
+        ITEM_NAME:"Roast Pork W/Pineapple",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1144,7 +1242,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithGingerAndSpringOnion = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"75",
-        ITEM_NAME:"Roast Pork With Ginger & Spring Onion",
+        ITEM_NAME:"Roast Pork W/Ginger&Spring Onion",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1152,7 +1250,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithKongpoSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"76",
-        ITEM_NAME:"Roast Pork With Kongpo Sauce",
+        ITEM_NAME:"Roast Pork W/Kongpo Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1160,7 +1258,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithCantoneseSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"77",
-        ITEM_NAME:"Roast Pork With Cantonese Sauce",
+        ITEM_NAME:"Roast Pork W/Cantonese Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1168,7 +1266,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithBlackBeanSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"78",
-        ITEM_NAME:"Roast Pork With Black Bean Sauce",
+        ITEM_NAME:"Roast Pork W/Black Bean Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1176,7 +1274,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithBlackPepper = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"79",
-        ITEM_NAME:"Roast Pork With Black Pepper",
+        ITEM_NAME:"Roast Pork W/Black Pepper",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1184,7 +1282,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithSataySauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"80",
-        ITEM_NAME:"Roast Pork With Satay Sauce",
+        ITEM_NAME:"Roast Pork W/Satay Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1192,7 +1290,7 @@ SuperWok_SampleData.load = function () {
     var roastPorkWithSzechaunSauce = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"81",
-        ITEM_NAME:"Roast Pork With Szechaun Sauce",
+        ITEM_NAME:"Roast Pork W/Szechaun Sauce",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
@@ -1231,18 +1329,79 @@ SuperWok_SampleData.load = function () {
     roastPorkDishes.ITEM_ITEM_CATEGORY_ID.add(roastPorkWithSzechaunSauce);
 
 
-    var mixedVegetables = new SuperWokDatabase.ITEM({
+    var mixedVegetablesSatay = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"82",
-        ITEM_NAME:"Mixed Vegetables & Tofu",
+        ITEM_NAME:"Mixed Veg&Tofu W/Satay",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesBlackbean = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/BlackBean",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesChopsuey = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/Chopsuey",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesBlackPeper = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/BlackPepper",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesKongpo = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/Kongpo",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesSzechuan = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/Szechuan",
+        ITEM_PRICE:6.50,
+        ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
+        EXPIRED:"NO"
+    });
+    var mixedVegetablesOyster = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"82",
+        ITEM_NAME:"Mixed Veg&Tofu W/Oyster",
         ITEM_PRICE:6.50,
         ITEM_FULL_DESCRIPTION:"Mixed Vegetables & Touf with satay,Black Bean,Chop Suey,Black Pepper,Kongpo,Szechuan or Oyster Sauce",
         EXPIRED:"NO"
     });
 
-    persistence.add(mixedVegetables);
+    persistence.add(mixedVegetablesSatay);
+    persistence.add(mixedVegetablesBlackbean);
+    persistence.add(mixedVegetablesChopsuey);
+    persistence.add(mixedVegetablesBlackPeper);
+    persistence.add(mixedVegetablesKongpo);
+    persistence.add(mixedVegetablesSzechuan);
+    persistence.add(mixedVegetablesOyster);
 
-    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetables);
+
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesSatay);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesBlackbean);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesChopsuey);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesBlackPeper);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesKongpo);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesSzechuan);
+    vegetableDishes.ITEM_ITEM_CATEGORY_ID.add(mixedVegetablesOyster);
 
     var houseSpecialFriedRice = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
@@ -1421,7 +1580,7 @@ SuperWok_SampleData.load = function () {
         ITEM_ID:"TEXT",
         ITEM_CODE:"100",
         ITEM_NAME:"Beef Char Kueh Teow",
-        ITEM_PRICE:8.80,
+        ITEM_PRICE:8.20,
         ITEM_FULL_DESCRIPTION:"",
         EXPIRED:"NO"
     });
@@ -1517,14 +1676,35 @@ SuperWok_SampleData.load = function () {
         ITEM_FULL_DESCRIPTION:"Chicken Balls(8)",
         EXPIRED:"NO"
     });
-    var fourInOne = new SuperWokDatabase.ITEM({
+    var fourInOneChicken = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"111",
-        ITEM_NAME:"4 In 1",
+        ITEM_NAME:"4 In 1 Chicken",
         ITEM_PRICE:5.80,
         ITEM_FULL_DESCRIPTION:"Chips,Fried Rice Chicken Or Beef With Curry Sauce",
         EXPIRED:"NO"
     });
+    var fourInOneBeef = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"111",
+        ITEM_NAME:"4 In 1 Beef",
+        ITEM_PRICE:5.80,
+        ITEM_FULL_DESCRIPTION:"Chips,Fried Rice Chicken Or Beef With Curry Sauce",
+        EXPIRED:"NO"
+    });
+    var fourInOneChickenBalls = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"111",
+        ITEM_NAME:"4 In 1 ChickenBalls",
+        ITEM_PRICE:5.80,
+        ITEM_FULL_DESCRIPTION:"Chips,Fried Rice Chicken Or Beef With Curry Sauce",
+        EXPIRED:"NO"
+    });
+
+
+
+
+
     var threeInOne = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"112",
@@ -1533,11 +1713,21 @@ SuperWok_SampleData.load = function () {
         ITEM_FULL_DESCRIPTION:"Chips Fired Rice With Curry Sauce",
         EXPIRED:"NO"
     });
-    var twoInOne = new SuperWokDatabase.ITEM({
+
+
+    var twoInOneChips = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"113",
-        ITEM_NAME:"2 In 1",
-        ITEM_PRICE:1.80,
+        ITEM_NAME:"2 In 1 Chips",
+        ITEM_PRICE:3.00,
+        ITEM_FULL_DESCRIPTION:"Chips Or Rice With Curry Sauce",
+        EXPIRED:"NO"
+    });
+    var twoInOneFriedRice = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"113",
+        ITEM_NAME:"2 In 1 FriedRice",
+        ITEM_PRICE:3.00,
         ITEM_FULL_DESCRIPTION:"Chips Or Rice With Curry Sauce",
         EXPIRED:"NO"
     });
@@ -1550,6 +1740,73 @@ SuperWok_SampleData.load = function () {
         EXPIRED:"NO"
     });
 
+    var boiledRiceWithMain = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Boild Rice Comes Main",
+        ITEM_PRICE:0.00,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var chipsFree = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Chips Comes Mian",
+        ITEM_PRICE:0.00,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var frideRiceFree = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Fired Rice Comes Main",
+        ITEM_PRICE:0.50,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var frideNoodleFree = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Fired Noodle Comes Main",
+        ITEM_PRICE:1.50,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var yangZhou = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"YangZhou Comes Main",
+        ITEM_PRICE:1.50,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+
+    var extraCurrySauce = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Curry Sauce",
+        ITEM_PRICE:1.50,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var onionRings = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Onion Rings",
+        ITEM_PRICE:3.00,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+    var special = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"101",
+        ITEM_NAME:"Special",
+        ITEM_PRICE:0.00,
+        ITEM_FULL_DESCRIPTION:"",
+        EXPIRED:"NO"
+    });
+
+
     persistence.add(boiledRice);
     persistence.add(friedRice);
     persistence.add(friedNoodls);
@@ -1560,10 +1817,23 @@ SuperWok_SampleData.load = function () {
     persistence.add(friedOnions);
     persistence.add(friedMushrooms);
     persistence.add(chickenBalls);
-    persistence.add(fourInOne);
+    persistence.add(fourInOneChicken);
+    persistence.add(fourInOneBeef);
+    persistence.add(fourInOneChickenBalls);
     persistence.add(threeInOne);
-    persistence.add(twoInOne);
+    persistence.add(twoInOneChips);
+    persistence.add(twoInOneFriedRice);
+
     persistence.add(anySauce);
+    persistence.add(boiledRiceWithMain);
+    persistence.add(chipsFree);
+    persistence.add(frideRiceFree);
+    persistence.add(frideNoodleFree);
+    persistence.add(yangZhou);
+    persistence.add(extraCurrySauce);
+    persistence.add(special);
+    persistence.add(onionRings);
+
 
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(boiledRice);
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(friedRice);
@@ -1575,24 +1845,47 @@ SuperWok_SampleData.load = function () {
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(friedOnions);
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(friedMushrooms);
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(chickenBalls);
-    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(fourInOne);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(fourInOneChicken);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(fourInOneChickenBalls);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(fourInOneBeef);
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(threeInOne);
-    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(twoInOne);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(twoInOneChips);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(twoInOneFriedRice);
     extraPoritions.ITEM_ITEM_CATEGORY_ID.add(anySauce);
 
-    var snackBoxIn = new SuperWokDatabase.ITEM({
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(boiledRiceWithMain);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(chipsFree);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(frideRiceFree);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(frideNoodleFree);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(yangZhou);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(extraCurrySauce);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(special);
+    extraPoritions.ITEM_ITEM_CATEGORY_ID.add(onionRings);
+
+
+    var snackBoxCurry = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
         ITEM_CODE:"115",
-        ITEM_NAME:"Snack Box",
+        ITEM_NAME:"Snack Box Curry",
+        ITEM_PRICE:7.50,
+        ITEM_FULL_DESCRIPTION:"Chicken Balls(2),Spring Roll(1),Won Tons(2), Chicken Wings(2)&Chips.(Choice Of Sweet & Sour Or Curry Sauce)",
+        EXPIRED:"NO"
+    });
+    var snackBoxSweetSour = new SuperWokDatabase.ITEM({
+        ITEM_ID:"TEXT",
+        ITEM_CODE:"115",
+        ITEM_NAME:"Snack Box Sweet/Sour",
         ITEM_PRICE:7.50,
         ITEM_FULL_DESCRIPTION:"Chicken Balls(2),Spring Roll(1),Won Tons(2), Chicken Wings(2)&Chips.(Choice Of Sweet & Sour Or Curry Sauce)",
         EXPIRED:"NO"
     });
 
 
-    persistence.add(snackBox);
+    persistence.add(snackBoxCurry);
+    persistence.add(snackBoxSweetSour);
 
-    snackBox.ITEM_ITEM_CATEGORY_ID.add(snackBoxIn);
+    snackBox.ITEM_ITEM_CATEGORY_ID.add(snackBoxCurry);
+    snackBox.ITEM_ITEM_CATEGORY_ID.add(snackBoxSweetSour);
 
     var cokeBig = new SuperWokDatabase.ITEM({
         ITEM_ID:"TEXT",
@@ -1712,7 +2005,7 @@ SuperWok_SampleData.load = function () {
         ITEM_ID:"TEXT",
         ITEM_CODE:"H2",
         ITEM_NAME:"Happy Meal 2",
-        ITEM_PRICE:10.95,
+        ITEM_PRICE:25.95,
         ITEM_FULL_DESCRIPTION:"Startes(2) Choose 2 Starters Forom NO S1 -S4 & 1 -8, Main Course(2) Choose 2 Main Course From King Prawn,Chicken, Beef Or Roast Pork in Menu,Fired Rice & Chips,2 Free Cans",
         EXPIRED:"NO"
     });
@@ -1722,129 +2015,15 @@ SuperWok_SampleData.load = function () {
     mealDeals.ITEM_ITEM_CATEGORY_ID.add(happy1);
     mealDeals.ITEM_ITEM_CATEGORY_ID.add(happy2);
 
-//
-//    var testOrder = new SuperWokDatabase.ORDER_DATA({
-//
-//
-//        ORDER_ID:"1234",
-//        ORDER_TIME:1350301986,
-//        ORDER_FINISHED:"N",
-//        ORDER_PAIED:"N",
-//        TODAY_ID:1,
-//        NO_OF_ORDERED_ITEM:"TEXT",
-//        ORDER_TOTAL_PRICE:"NUMERIC",
-//        EXPIRED:"NO"
-//
-//
-//
-//    });
-//    persistence.add(testOrder);
-//    orderTypeTakeAway.ORDER_ORDER_TYPE_CATEGORY_ID.add(testOrder);
-//    orderStatusOpen.ORDER_ORDER_STATUS_ID.add(testOrder);
-//    payStatusUnpaid.ORDER_PAY_STATUS_ID.add(testOrder);
-//
-//
-//
-//   var orderedItem1 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"001",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem2 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"002",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem3 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"003",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem4 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"004",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem5 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"005",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem6 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"006",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem7 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"007",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    var orderedItem8 = new  SuperWokDatabase.ORDERED_ITEM({
-//        ORDERED_ITEM_ID:"008",
-//        ORDERED_ITEM_TIME:"INT",
-//        ORDERED_ITEM_QUANTITY:"1",
-//        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//
-//    persistence.add(orderedItem1);
-//    persistence.add(orderedItem2);
-//    persistence.add(orderedItem3);
-//    persistence.add(orderedItem4);
-//
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem1);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem2);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem3);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem4);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem5);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem6);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem7);
-//    testOrder.ORDERED_ITEM_ITEM_ID.add(orderedItem8);
-//
-//    chickenBalls.ORDERED_ITEM_ITEM_ID.add(orderedItem1);
-//    coke.ORDERED_ITEM_ITEM_ID.add(orderedItem2);
-//    dietCokeBig.ORDERED_ITEM_ITEM_ID.add(orderedItem3);
-//    beefChopSuey.ORDERED_ITEM_ITEM_ID.add(orderedItem4);
-//    chickenChowMein.ORDERED_ITEM_ITEM_ID.add(orderedItem5);
-//    prawnCocktails.ORDERED_ITEM_ITEM_ID.add(orderedItem6);
-//    fanta.ORDERED_ITEM_ITEM_ID.add(orderedItem7);
-//    houseSpecialFriedRice.ORDERED_ITEM_ITEM_ID.add(orderedItem8);
-//
-//
-//    var zhe = new SuperWokDatabase.CUSTOMER_DETAILS({
-//        CUSTOMER_ID:"TEXT",
-//        NAME:"TEXT",
-//        FIRST_NAME:"TEXT",
-//        FAMILY_NAME:"TEXT",
-//        PHONE_NUMBER:0870975288,
-//        DELIVERY_CHARGE:2.30,
-//        ADDRESS_ONE:"1 CrossAvenue Dun Laoghaire",
-//        ADDRESS_TWO:"TEXT",
-//        ADDRESS_THREE:"TEXT",
-//        NO_OF_ORDER:"INT",
-//        JOIN_TIME:"INT",
-//        LAST_ORDERED_TIME:"INT",
-//        PAGE_REFERENCE : "TEXT",
-//        EXPIRED:"TEXT"
-//    });
-//    persistence.add(zhe);
-//    zhe.CUSTOMER_DETAIL_ID_ORDERED_DATA.add(testOrder);
 
+
+   var orderedItem1 = new  SuperWokDatabase.ORDERED_ITEM({
+        ORDERED_ITEM_ID:"001",
+        ORDERED_ITEM_TIME:"INT",
+        ORDERED_ITEM_QUANTITY:"1",
+        ORDERED_ITEM_MODIFY_DETAILS:"TEXT",
+        EXPIRED:"TEXT"
+    });
 
     persistence.flush();
 

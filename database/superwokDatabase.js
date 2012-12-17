@@ -35,7 +35,7 @@ SuperWokDatabase.CreateDatabase = function (strDbName, strDbDesc, size, callback
 SuperWokDatabase.loadDatabaseData = function (callback) {
 
     SuperWokDatabase.ITEM.all().count(function (err, counter) {
-        alert(counter);
+//        alert(counter);
                     if(counter>0){
                         console.log("There is pre-sample data");
                         callback(false);

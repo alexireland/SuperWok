@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!--<!DOCTYPE HTML>-->
 
 
 <!--<html manifest="../main.manifest">-->
@@ -27,6 +27,8 @@
     <script type="text/javascript" src="../database/superwokDatabase.js"></script>
     <script type="text/javascript" src="../database/sampleData.js"></script>
     <script type="text/javascript" src="../script/timeDate.js"></script>
+    
+
 
 
 	<script type="text/javascript" src="../script/util.js"></script>
@@ -55,23 +57,28 @@
           <button class="orderType btn span2 btn-large btn-primary">Take Away</button>
           <button class="orderType btn span2 btn-large btn-primary">Collection</button>
           <button class="orderType btn span2 btn-large btn-primary">Delivery</button>
-          <button class="orderType btn span2 btn-large btn-warning">Cancel</button>
+          <button id="cancelOrderType" class=" btn span2 btn-large btn-warning">Cancel</button>
       </div>
-
+      <button class="btn span2 btn-large btn-primary" id="plusQty" style="position: absolute;top: 220px;left: 450px;width: 50px; height: 150px;">+</button>
+      <button class="btn span2 btn-large btn-warning" id="minusQty" style="position: absolute;top: 400px;left: 450px;width: 50px; height: 150px;">-</button>
 
 
       <div id="orderSection" style="width: 500px;height: 650px; margin-top: 5px; float: left;">
                       <div id="shopInformation" style="visibility: hidden;">
                           <label style="text-align: center">SuperWok TakeAway</label>
-                          <label style="text-align: center">01-2880666</label>
+                          <label style="text-align: center">01-2800666</label>
                           <label style="text-align: center">1 Cross Avenue Dun Laohgaire</label>
                       </div>
                       <div id="receiptTopInformation" style="height: 80px;">
                           <label id="orderedType" style="display: inline-block;"></label>
-                          <label id="orderedNumber" style="display: inline-block; margin-left: 30px;"></label>
+                          <!--<label id="orderedNumber" style="display: inline-block; margin-left: 30px;"></label>-->
+                          <label id="orderedCustomerName"style="display: inline-block;"></label>
                           <label id="orderedTime" style="display: inline-block; float: right;"></label>
+                          <label id="orderId" style="display: inline-block; float: right; margin-right: 10px;"></label>
                           <label id="orderedPhoneNumber"></label>
                           <label id="orderDeliveryAddress"></label>
+
+                          <div style="clear: both;"></div>
 
                       </div>
 
@@ -81,8 +88,13 @@
 
                       </div>
                       <div id="orderFooterInfo" style="color: #000000;">
-                          <div class="generalLabelAndInputStyle">
-                              <label>Delivery</label>
+                          <div id="foodPriceInBottom"class="generalLabelAndInputStyle">
+                              <label>Food</label>
+                              <label id="foodPrice"></label>
+                          </div>
+                          <div style="clear: both;"></div>
+                          <div id="bottomDeliveryPrice"class="generalLabelAndInputStyle">
+                             <label>Delivery</label>
                              <label id="deliveryCharge"></label>
                           </div>
                           <div style="clear: both;"></div>
@@ -90,19 +102,23 @@
                               <label>Total</label>
                               <label id="totalCurrentOrderPrice"></label>
                           </div>
+                          <div style="clear: both;"></div>
+                          <!--<div class="generalLabelAndInputStyle">-->
+                              <!--<label>Paid</label>-->
+                              <!--<label id="orderPayOrUnpaid"></label>-->
+                          <!--</div>-->
+                          <div style="clear: both;"></div>
+
+                          <!--<div class="generalLabelAndInputStyle">-->
+                              <!--<label>OrderNo</label>-->
+                              <!--<label id="todayOrderNo"></label>-->
+                          <!--</div>-->
                       </div>
 
                   </div>
 
 
   </div>
-
-
-
-
-
-
-
 
   <div id="right">
 
@@ -125,15 +141,24 @@
           <button class="categoryBtn span2 btn-large btn-info">Snack Box</button>
           <button class="categoryBtn span2 btn-large btn-info">Happy Meal Deals</button>
           <button class="categoryBtn span2 btn-large btn-info">Soft Drink</button>
+          <button  id="comesMain" class="categoryBtn span2 btn-large btn-info" style="visibility:visible;">Comes Main</button>
+
 
       </div>
 
 
+      <div style="clear: both;"></div>
+      <div id="callBackSection">
+
+              <input id="theCallBackId" type="text" style="width: 150px; display: inline-block; float: left; margin-left: 35px;height: 40px;"/>
+              <button id="callBackOrder" class="span2 btn-large btn-primary" style="display: inline-block; float: left;margin-left: 35px;">Call Back Order</button>
+
+      </div>
       <div id="buttonInBottom">
-          <button class="span1 btn-large btn-warning">Modify</button>
-          <button class="span1 btn-large btn-info">Pay Order</button>
-          <button id="payOrder" class="span1 btn-large btn-success">Pay</button>
-          <button id="openCashDrawer" class="span1 btn-large btn-success">Open Drawer</button>
+          <button id="modifyItem" class="span2 btn-large btn-warning" style="width: 140px;">Modify</button>
+          <!--<button class="span1 btn-large btn-info">Pay Order</button>-->
+          <button id="payOrder" class="span2 btn-large btn-success"style="width: 140px;">Pay</button>
+          <button id="openCashDrawer" class="span2 btn-large btn-success"style="width: 140px;">Open Drawer</button>
 
       </div>
 
@@ -141,6 +166,9 @@
 
   </div>
 
+
+
+  <div id="openCashDrawerPrint" style="height: 0px;width: 0px; display: none;"></div>
 
 
 
@@ -152,7 +180,7 @@
 
 
 </html>
-<div id="MenuPopup" style="background:#2B3443; broder: 3px white solid; top:440px;width:900px; height: 550px;overflow: auto; margin:-420px 0px 0px -450px;" class="reveal-modal">
+<div id="MenuPopup" style="background:#2B3443; broder: 3px white solid; top:440px;width:900px; height: 650px;overflow: auto; margin:-420px 0px 0px -450px;" class="reveal-modal">
     <div id="popUpHeader" class="popUpHeaderStyle">
 
     </div>
@@ -162,24 +190,27 @@
 
     </div>
 
+    <div id="theSauceSectoins">
+
+
+    </div>
 
 
 </div>
-<div id="CollectionPopup" style="background:#155475; top:400px;width:500px; height: 250px;overflow: auto; margin:-220px 0px 0px -250px;" class="newPopupStyle reveal-modal">
+<div id="CollectionPopup" style="background:#155475; top:400px;width:550px; height: 250px;overflow: auto; margin:-245px 0px 0px -275px;" class="newPopupStyle reveal-modal">
     <div class="newPopupStyleHeader">
         <h2>Collection Details</h2>
     </div>
     <div class="newPopupStyleBody">
 <div class="generalLabelAndInputStyle">
-    <label>Name</label>
-    <input id="collectionCustomerName"/>
-
+    <label>PhoneNumber</label>
+    <input  id="collectionCustomerPhone"/>
 </div>
 <div style="clear: both;"></div>
 
 <div class="generalLabelAndInputStyle">
-    <label>PhoneNumber</label>
-    <input  id="collectionCustomerPhone"/>
+    <label>Name</label>
+    <input id="collectionCustomerName"/>
 </div>
     <div style="clear: both;"></div>
 
@@ -187,40 +218,46 @@
 <div class="newPopupStyleFooter">
 
     <button id="addNewCollectionDone" class="span2 btn-large btn-success" style="float: right;" >Done</button>
+    <button id="useAddNewCollectionDone" class="span2 btn-large btn-info" style="float: right;" >Use</button>
     <button id="addNewCollectionClose" class="span2 btn-large btn-success" style="float: left;">Close</button>
 </div>
 
 </div>
 
 
-<div id="DeliveryPopup" style="background:#155475; top:400px;width:500px; height: 450px;overflow: auto; margin:-220px 0px 0px -250px;" class="newPopupStyle reveal-modal">
+<div id="DeliveryPopup" style="background:#155475; top:400px;width:600px; height: 450px;overflow: auto; margin:-270px 0px 0px -300px;" class="newPopupStyle reveal-modal">
     <div class="newPopupStyleHeader">
         <h2>Delivery Details</h2>
     </div>
     <div class="newPopupStyleBody">
         <div class="generalLabelAndInputStyle">
-            <label>Name</label>
-            <input id="DeliveryCustomerName"/>
-
-        </div>
-        <div style="clear: both;"></div>
-
-        <div class="generalLabelAndInputStyle">
             <label>PhoneNumber</label>
             <input  id="DeliveryCustomerPhone"/>
         </div>
+        <div style="clear: both;"></div>
+        <div class="generalLabelAndInputStyle">
+            <label>Name</label>
+            <input id="DeliveryCustomerName"/>
+        </div>
+        <div style="clear: both;"></div>
         <div class="generalLabelAndInputStyle">
             <label>Address</label>
             <textarea  id="DeliveryAddress" style = " display:inline-block; height: 60px; text-align: left"></textarea>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="generalLabelAndInputStyle" style="margin-top: 15px;">
+            <label>Delivery Charge</label>
+            <input id="DeliveryChargePrice"/>
         </div>
 
         <div style="clear: both;"></div>
 
     </div>
-    <div class="newPopupStyleFooter">
+    <div class="newPopupStyleFooter" style="margin-top: 25px;">
 
         <button id="addNewDeliveryDone" class="span2 btn-large btn-success" style="float: right;" >Done</button>
-        <button id="addNewDeliveryClose" class="span2 btn-large btn-success" style="float: left;">Close</button>
+        <button id="useAddNewDeliveryDone" class="span2 btn-large btn-info" style="float: right;" >Use</button>
+        <button id="addNewDeliveryClose" class="span2 btn-large btn-success " style="float: left;">Close</button>
     </div>
 
 </div>
@@ -251,5 +288,60 @@
         <button id="addNewTakeAwayDone" class="span2 btn-large btn-success" style="float: right;" >Yes</button>
         <button id="addNewTakeAwayClose" class="span2 btn-large btn-success" style="float: left;">Close</button>
     </div>
+
+</div>
+
+<div id="ModifyItemPopup" style="background:#155475; top:400px;width:500px; height: 400px;overflow: auto; margin:-220px 0px 0px -250px;" class="newPopupStyle reveal-modal">
+    <div class="newPopupStyleHeader">
+        <h2>Modify Item</h2>
+        <button id="deleteItem" class="span2 btn-large btn-danger" style="float: right; position: absolute;top: 330px;left: 180px;" >Delete</button>
+    </div>
+    <div class="newPopupStyleBody">
+        <div class="generalLabelAndInputStyle">
+            <label id="modifyItemName"></label>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="generalLabelAndInputStyle">
+            <label>Price</label>
+            <input id="modifyItemPrice"/>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="generalLabelAndInputStyle">
+            <label>Qty</label>
+            <input id="modifyItemQty"/>
+        </div>
+        <div class="generalLabelAndInputStyle">
+            <label>FreeText</label>
+            <textarea id="modifyItemFreeText"></textarea>
+        </div>
+
+
+        <div style="clear: both;"></div>
+
+
+
+    </div>
+    <div class="newPopupStyleFooter" style="margin-top: 20px;">
+
+        <button id="updateItem" class="span2 btn-large btn-success" style="float: right;" >Update</button>
+        <button id="modifyItemClose" class="span2 btn-large btn-success" style="float: left;">Close</button>
+    </div>
+
+</div>
+
+
+<div id="payPopUp" style="background:#155475; top:400px;width:500px; height: 200px;overflow: auto; margin:-220px 0px 0px -250px;" class="newPopupStyle reveal-modal">
+    <div class="newPopupStyleHeader">
+        <h2>Pay</h2>
+    </div>
+    <div class="newPopupStyleBody">
+
+        <button id="payOrderNow" class="span2 btn-large btn-success" style="float: right;" >Pay Now</button>
+        <button id="payOrderLater" class="span2 btn-large btn-success" style="float: left;">Pay Later</button>
+
+
+
+    </div>
+
 
 </div>
