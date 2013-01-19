@@ -24,6 +24,7 @@ Util.printDiv = function(options, callback) {
 			"menubar=yes, scrollbars=yes, resizable=yes, width=" + options.width + ", height=" + options.height;
 	var printWindow = window.open("about:blank", "Print Order", printWindowProperties);
 	printWindow.document.write("<div id='printDivBody'>This is a dummy div</div>");
+//    printWindow.onfocus=function(){ printWindow.close();}
 
 	Util.loadResource(printWindow, "../bootstrap/css/bootstrap.css", "css");
 	Util.loadResource(printWindow, "../foundation/stylesheets/foundation.css", "css");
